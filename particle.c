@@ -24,7 +24,7 @@ void particle_init(struct particle *p, int size)
 	float col;
 	int init_color;
 	srand((unsigned)time(NULL)); /* seed rand() function */
-	init_vel = ((float) rand()) / ((float) RAND_MAX) * (-40) - 70; /* find random upward velocity */
+	init_vel = ((float) rand()) / ((float) RAND_MAX) * (-40) - 100; /* find random upward velocity */
 	init_color = rand() % 7 + 1; /* pick random color */
 	col = (rand() % (COLS * 3 / 4)) + (COLS / 8); /* pick random column to start in */
 	for(i = 0; i < size; ++i) /* initialize particles */
@@ -33,7 +33,7 @@ void particle_init(struct particle *p, int size)
 		p[i].pos[1] = col;
 		p[i].vel[0] = init_vel;
 		p[i].vel[1] = 0.0;
-		p[i].life = 1.2;
+		p[i].life = 1.0;
 		p[i].sym = (char)((rand() % 66) + '#'); /* pick random character */
 		p[i].color = init_color;
 	}
